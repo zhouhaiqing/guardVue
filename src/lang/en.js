@@ -43,7 +43,11 @@ export default {
         LockerOperator: 'Locker Operator',
         Courier: 'Courier',
         Condo: 'Condo',
-        PriceManagement: 'Price Management'
+        PriceManagement: 'Price Management',
+        UserManagement: 'Backend User Management',
+        AdminUser: 'Admin User',
+        CourierUser: 'Courier User',
+        CondoUser: 'Condo User'
     },
     page: {
         common: {
@@ -61,6 +65,7 @@ export default {
             billingBtn: 'Billing Report',
             parcelBtn: 'Parcel Information',
             approvalBtn: 'Approve',
+            passwordBtn: 'Change Password',
             createTime: 'CreateTime',
             updateTime: 'UpdateTime',
             actions: 'Actions',
@@ -107,7 +112,7 @@ export default {
             valid: {
                 switchStatusError: 'Switch status error',
                 addMenuError: 'Add menu error',
-                editMenuError: 'Edit menu error',
+                editMenuError: 'Update menu error',
                 deleteMenuError: 'Delete menu error',
                 menuNameZhRe: 'Please enter Menu Name(Chinese)',
                 menuNameZhLen: 'Menu Name(Chinese) must be between 2 and 64 characters',
@@ -124,7 +129,7 @@ export default {
             valid: {
                 switchStatusError: 'Switch status error',
                 addRoleError: 'Add role error',
-                editRoleError: 'Edit role error',
+                editRoleError: 'Update role error',
                 deleteRoleError: 'Delete role error',
                 roleNameRe: 'Please enter the role name',
                 roleNameLen: 'Role Name must be between 2 and 64 characters'
@@ -153,7 +158,7 @@ export default {
             valid: {
                 switchStatusError: 'Switch status error',
                 addOrganError: 'Add company error',
-                editOrganError: 'Edit company error',
+                editOrganError: 'Update company error',
                 deleteOrganError: 'Delete company error',
                 organName: 'Please enter company name',
                 organNameLen: 'Company Name must be between 2 and 64 characters',
@@ -205,6 +210,50 @@ export default {
                 sdOverTimeFee: 'Please enter the Courier Overtime Retrieval (S)',
                 latePayment: 'Please enter the Late Payment Interests (%)',
                 actTurnoverRate: 'Please enter the Discounted Rate for Collected Payment (%)'
+            }
+        },
+        user: {
+            organName: 'Company Name',
+            name: 'Name',
+            username: 'Username',
+            userType: 'User Type',
+            status: 'Status',
+            phone: 'Phone',
+            email: 'Email',
+            roleName: 'User Role',
+            lastTime: 'Last Login',
+            lastIp: 'Login IP',
+            ipLowerLimit: 'IP Lower Limit',
+            ipUpperLimit: 'IP Upper Limit',
+            remark: 'Remark',
+            oldPassword: 'Old Password',
+            newPassword: 'New Password',
+            confirmPassword: 'Confirm Password',
+            addUser: 'Add User',
+            roleNamePlaceholder: 'Please select user role',
+            organNamePlaceholder: 'Please select the company',
+            phonePlaceholder: 'Please enter the number',
+            search: {
+                name: 'Name',
+                username: 'Username',
+                organName: 'Company'
+            },
+            valid: {
+                switchStatusError: 'Switch status error',
+                addUserError: 'Add user error',
+                editUserError: 'Update user error',
+                deleteUserError: 'Delete user error',
+                name: 'Please enter the name',
+                nameLen: 'Name must be between 2 and 64 characters',
+                username: 'Please enter the username',
+                usernameLen: 'Username must be between 2 and 64 characters',
+                email: 'Please enter email',
+                emailFormat: 'Email must be between 2 and 64 characters',
+                oldPassword: 'Please enter the old password',
+                password: 'Please enter the new password',
+                passwordLen: 'New password must be between 6 and 10 characters',
+                confirmPassword: 'Please enter the confirm password',
+                confirmPasswordLen: 'Confirm password must be between 6 and 10 characters'
             }
         }
     }

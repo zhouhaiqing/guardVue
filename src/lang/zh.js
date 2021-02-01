@@ -43,7 +43,11 @@ export default {
         LockerOperator: '平台企业',
         Courier: '快递公司',
         Condo: '小区公寓',
-        PriceManagement: '价格管理'
+        PriceManagement: '价格管理',
+        UserManagement: '系统用户管理',
+        AdminUser: '管理员用户',
+        CourierUser: '快递公司用户',
+        CondoUser: '公寓小区用户'
     },
     page: {
         common: {
@@ -61,6 +65,7 @@ export default {
             billingBtn: '查看账单',
             parcelBtn: '查看定单',
             approvalBtn: '批准',
+            passwordBtn: '修改密码',
             createTime: '创建时间',
             updateTime: '更新时间',
             actions: '操作',
@@ -204,6 +209,50 @@ export default {
                 sdOverTimeFee: '请输入快递公司超时取回（48小时）小柜',
                 latePayment: '请输入迟付款的利息（%）',
                 actTurnoverRate: '请输入代收款项的实际上交率（%）'
+            }
+        },
+        user: {
+            organName: '企业名称',
+            name: '姓名',
+            username: '用户名',
+            userType: '用户类型',
+            status: '状态',
+            phone: '联系电话',
+            email: '邮箱',
+            roleName: '用户角色',
+            lastTime: '上次登录',
+            lastIp: '登录IP',
+            ipLowerLimit: 'IP Lower Limit',
+            ipUpperLimit: 'IP Upper Limit',
+            remark: '备注',
+            oldPassword: '旧密码',
+            newPassword: '新密码',
+            confirmPassword: '确认密码',
+            addUser: '新增用户',
+            roleNamePlaceholder: '请选择用户角色',
+            organNamePlaceholder: '请选择所属企业',
+            phonePlaceholder: '请输入数字',
+            search: {
+                name: '姓名',
+                username: '用户名',
+                organName: '所属企业'
+            },
+            valid: {
+                switchStatusError: '状态切换失败',
+                addUserError: '新增用户失败',
+                editUserError: '修改用户失败',
+                deleteUserError: '删除用户失败',
+                name: '请输入姓名',
+                nameLen: '长度在 2 到 64 个字符',
+                username: '请输入企业简称',
+                usernameLen: '长度在 2 到 64 个字符',
+                email: '请输入邮箱',
+                emailFormat: '请输入正确的邮箱地址',
+                oldPassword: '原密码不能为空',
+                password: '新密码不能为空',
+                passwordLen: '长度在 6 到 10 个字符',
+                confirmPassword: '确认密码不能为空',
+                confirmPasswordLen: '长度在 6 到 10 个字符'
             }
         }
     }

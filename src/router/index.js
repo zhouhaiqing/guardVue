@@ -107,8 +107,34 @@ export const constantRoutes = [
             {
                 path: 'drawer-price',
                 name: 'drawer-price',
-                component: () => import('@/views/price/'),
+                component: () => import('@/views/price/index'),
                 meta: { title: 'PriceManagement', icon: 'money', noCache: true }
+            }
+        ]
+    },
+    {
+        path: '/user',
+        component: Layout,
+        alwaysShow: true,
+        meta: { title: 'UserManagement', icon: 'user', roles: ['admin'] },
+        children: [
+            {
+                path: 'admin-user',
+                name: 'admin-user',
+                component: () => import('@/views/user/index'),
+                meta: { title: 'AdminUser', icon: 'user', noCache: true }
+            },
+            {
+                path: 'courier-user',
+                name: 'courier-user',
+                component: () => import('@/views/user/index'),
+                meta: { title: 'CourierUser', icon: 'user', noCache: true }
+            },
+            {
+                path: 'condo-user',
+                name: 'condo-user',
+                component: () => import('@/views/user/index'),
+                meta: { title: 'CondoUser', icon: 'user', noCache: true }
             }
         ]
     },
