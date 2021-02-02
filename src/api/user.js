@@ -79,3 +79,11 @@ export function userList(query) {
         params: query
     })
 }
+
+export function updatePassword(data) {
+    return request({
+        url: '/admin/user/update-password',
+        method: 'post',
+        data
+    })
+}

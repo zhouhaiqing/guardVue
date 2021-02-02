@@ -290,15 +290,17 @@ export default {
         getOrganList() {
             this.loading = true
             this.getOrganType()
-            organList(this.queryParams).then(res => {
-                this.tableData = res.data.list
-                if (typeof res.data.total != 'undefined') {
-                    this.total = res.data.total
-                }
-                setTimeout(() => {
-                    this.loading = false
-                }, 100)
-            })
+            organList(this.queryParams)
+                .then(res => {
+                    this.tableData = res.data.list
+                    if (typeof res.data.total != 'undefined') {
+                        this.total = res.data.total
+                    }
+                    setTimeout(() => {
+                        this.loading = false
+                    }, 100)
+                })
+                .catch(e => {})
         },
         getOrganType() {
             const path_name = this.$route.name || ''
@@ -315,9 +317,11 @@ export default {
             }
         },
         getDrawerPeiceList() {
-            drawerPriceList().then(res => {
-                this.options = res.data.list
-            })
+            drawerPriceList()
+                .then(res => {
+                    this.options = res.data.list
+                })
+                .catch(e => {})
         },
         resetForm() {
             this.organForm = {
@@ -367,7 +371,7 @@ export default {
                 this.title = this.$t('page.common.editBtn')
                 this.$nextTick(() => {
                     this.$refs['organForm'].clearValidate()
-                })
+                }).catch(e => {})
             })
         },
         submitForm(formName, dialogType) {
@@ -418,17 +422,19 @@ export default {
             })
         },
         switchStatus($event, organ_id) {
-            switchOrganStatus({ status: $event, organ_id: organ_id }).then(res => {
-                const { code, msg } = res
-                if (code !== 0) {
-                    this.$message.error(msg)
-                    return false
-                }
-                this.$message({
-                    message: this.$t('message.common.switchSuccess'),
-                    type: 'success'
+            switchOrganStatus({ status: $event, organ_id: organ_id })
+                .then(res => {
+                    const { code, msg } = res
+                    if (code !== 0) {
+                        this.$message.error(msg)
+                        return false
+                    }
+                    this.$message({
+                        message: this.$t('message.common.switchSuccess'),
+                        type: 'success'
+                    })
                 })
-            })
+                .catch(e => {})
         },
         hangleApprove(organ_id) {
             approveOrgan({ organ_id, organ_id, approved: 2 }).then(res => {

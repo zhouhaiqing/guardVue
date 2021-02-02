@@ -47,7 +47,10 @@ export default {
         UserManagement: 'Backend User Management',
         AdminUser: 'Admin User',
         CourierUser: 'Courier User',
-        CondoUser: 'Condo User'
+        CondoUser: 'Condo User',
+        MessageSettings: 'Message Settings',
+        SmsSettings: 'SMS Settings',
+        EmailSettings: 'Email Settings'
     },
     page: {
         common: {
@@ -230,6 +233,7 @@ export default {
             newPassword: 'New Password',
             confirmPassword: 'Confirm Password',
             addUser: 'Add User',
+            editPwd: 'Update Password',
             roleNamePlaceholder: 'Please select user role',
             organNamePlaceholder: 'Please select the company',
             phonePlaceholder: 'Please enter the number',
@@ -248,6 +252,8 @@ export default {
                 username: 'Please enter the username',
                 usernameLen: 'Username must be between 2 and 64 characters',
                 email: 'Please enter email',
+                roleId: 'Please select user role',
+                organId: 'Please select the company',
                 emailFormat: 'Email must be between 2 and 64 characters',
                 oldPassword: 'Please enter the old password',
                 password: 'Please enter the new password',

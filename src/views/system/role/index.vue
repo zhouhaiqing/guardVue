@@ -129,21 +129,25 @@ export default {
         },
         getRoleList() {
             this.loading = true
-            roleList(this.queryParams).then(res => {
-                this.tableData = res.data.list
-                if (typeof res.data.total != 'undefined') {
-                    this.total = res.data.total
-                }
-                setTimeout(() => {
-                    this.loading = false
-                }, 100)
-            })
+            roleList(this.queryParams)
+                .then(res => {
+                    this.tableData = res.data.list
+                    if (typeof res.data.total != 'undefined') {
+                        this.total = res.data.total
+                    }
+                    setTimeout(() => {
+                        this.loading = false
+                    }, 100)
+                })
+                .catch(e => {})
         },
         getOrganList() {
             const organ_id = this.$store.state.user.organ_id
-            organList({ organ_id: organ_id, status: enable }).then(res => {
-                this.options = res.data.list
-            })
+            organList({ organ_id: organ_id, status: enable })
+                .then(res => {
+                    this.options = res.data.list
+                })
+                .catch(e => {})
         },
         resetForm() {
             this.roleForm = {
@@ -169,16 +173,18 @@ export default {
         handleUpdate(val) {
             this.resetForm()
             this.getOrganList()
-            roleDetail(val.role_id).then(res => {
-                this.dialogType = 'edit'
-                this.dialogFormVisible = true
-                this.roleForm = res.data
-                this.organ_id = res.data.organ_id || ''
-                this.title = this.$t('page.common.editBtn')
-                this.$nextTick(() => {
-                    this.$refs['roleForm'].clearValidate()
+            roleDetail(val.role_id)
+                .then(res => {
+                    this.dialogType = 'edit'
+                    this.dialogFormVisible = true
+                    this.roleForm = res.data
+                    this.organ_id = res.data.organ_id || ''
+                    this.title = this.$t('page.common.editBtn')
+                    this.$nextTick(() => {
+                        this.$refs['roleForm'].clearValidate()
+                    })
                 })
-            })
+                .catch(e => {})
         },
         submitForm(formName, dialogType) {
             this.$refs[formName].validate(valid => {
@@ -239,7 +245,7 @@ export default {
                 this.$message({
                     message: this.$t('message.common.switchSuccess'),
                     type: 'success'
-                })
+                }).catch(e => {})
             })
         },
         handleDelete(val, index) {

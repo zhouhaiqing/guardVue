@@ -138,6 +138,26 @@ export const constantRoutes = [
             }
         ]
     },
+    {
+        path: '/settings',
+        component: Layout,
+        alwaysShow: true,
+        meta: { title: 'MessageSettings', icon: '', roles: ['admin'] },
+        children: [
+            {
+                path: 'sms',
+                name: 'sms',
+                component: () => import('@/views/settings/message/sms'),
+                meta: { title: 'SmsSettings', icon: '', noCache: true }
+            },
+            {
+                path: 'email',
+                name: 'email',
+                component: () => import('@/views/settings/message/email'),
+                meta: { title: 'EmailSettings', icon: '', noCache: true }
+            }
+        ]
+    },
 
     // 404 page must be placed at the end !!!
     { path: '*', redirect: '/404', hidden: true }

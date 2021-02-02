@@ -38,13 +38,16 @@ export default {
     methods: {
         submit() {
             this.loading = true
-            this.$store.dispatch('user/updateInfo', this.user).then(response => {
-                this.loading = false
-                this.$message({
-                    message: '修改成功',
-                    type: 'success'
+            this.$store
+                .dispatch('user/updateInfo', this.user)
+                .then(response => {
+                    this.loading = false
+                    this.$message({
+                        message: '修改成功',
+                        type: 'success'
+                    })
                 })
-            })
+                .catch(e => {})
             this.reload()
         }
     }

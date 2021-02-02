@@ -47,7 +47,10 @@ export default {
         UserManagement: '系统用户管理',
         AdminUser: '管理员用户',
         CourierUser: '快递公司用户',
-        CondoUser: '公寓小区用户'
+        CondoUser: '公寓小区用户',
+        MessageSettings: '信息设置',
+        SmsSettings: '短信设置',
+        EmailSettings: '邮件设置'
     },
     page: {
         common: {
@@ -229,6 +232,7 @@ export default {
             newPassword: '新密码',
             confirmPassword: '确认密码',
             addUser: '新增用户',
+            editPwd: '修改密码',
             roleNamePlaceholder: '请选择用户角色',
             organNamePlaceholder: '请选择所属企业',
             phonePlaceholder: '请输入数字',
@@ -248,6 +252,8 @@ export default {
                 usernameLen: '长度在 2 到 64 个字符',
                 email: '请输入邮箱',
                 emailFormat: '请输入正确的邮箱地址',
+                roleId: '请选择用户角色',
+                organId: '请选择所属企业',
                 oldPassword: '原密码不能为空',
                 password: '新密码不能为空',
                 passwordLen: '长度在 6 到 10 个字符',

@@ -235,15 +235,17 @@ export default {
         },
         getDrawerPriceList() {
             this.loading = true
-            drawerPriceList(this.queryParams).then(res => {
-                this.tableData = res.data.list
-                if (typeof res.data.total != 'undefined') {
-                    this.total = res.data.total
-                }
-                setTimeout(() => {
-                    this.loading = false
-                }, 100)
-            })
+            drawerPriceList(this.queryParams)
+                .then(res => {
+                    this.tableData = res.data.list
+                    if (typeof res.data.total != 'undefined') {
+                        this.total = res.data.total
+                    }
+                    setTimeout(() => {
+                        this.loading = false
+                    }, 100)
+                })
+                .catch(e => {})
         },
         resetForm() {
             this.baseForm = {
@@ -284,7 +286,7 @@ export default {
                 this.title = this.$t('page.common.editBtn')
                 this.$nextTick(() => {
                     this.$refs['baseForm'].clearValidate()
-                })
+                }).catch(e => {})
             })
         },
         submitForm(formName, dialogType) {

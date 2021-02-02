@@ -149,13 +149,15 @@ export default {
         },
         getMenuList() {
             this.loading = true
-            menuList(this.queryParams).then(res => {
-                this.tableData = res.data
-                this.options = res.data
-                setTimeout(() => {
-                    this.loading = false
-                }, 100)
-            })
+            menuList(this.queryParams)
+                .then(res => {
+                    this.tableData = res.data
+                    this.options = res.data
+                    setTimeout(() => {
+                        this.loading = false
+                    }, 100)
+                })
+                .catch(e => {})
         },
         resetMenuForm() {
             this.menuForm = {
@@ -199,7 +201,7 @@ export default {
                 this.title = this.$t('page.common.editBtn')
                 this.$nextTick(() => {
                     this.$refs['menuForm'].clearValidate()
-                })
+                }).catch(e => {})
             })
         },
         closeDialog() {
@@ -258,17 +260,19 @@ export default {
             })
         },
         switchStatus($event, menu_id) {
-            switchMenuStatus({ status: $event, menu_id: menu_id }).then(res => {
-                const { code, msg } = res
-                if (code !== 0) {
-                    this.$message.error(msg)
-                    return false
-                }
-                this.$message({
-                    message: this.$t('message.common.switchSuccess'),
-                    type: 'success'
+            switchMenuStatus({ status: $event, menu_id: menu_id })
+                .then(res => {
+                    const { code, msg } = res
+                    if (code !== 0) {
+                        this.$message.error(msg)
+                        return false
+                    }
+                    this.$message({
+                        message: this.$t('message.common.switchSuccess'),
+                        type: 'success'
+                    })
                 })
-            })
+                .catch(e => {})
         },
         handleDelete(val, index) {
             this.$confirm(this.$t('message.common.deleteConfirm'), this.$t('message.common.warnMsg'), {
