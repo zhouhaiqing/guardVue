@@ -311,7 +311,6 @@ export default {
                     this.dialogType = 'edit'
                     this.dialogFormVisible = true
                     this.baseForm = res.data
-                    console.log(this.baseForm)
                     this.title = this.$t('page.common.editBtn')
                     this.$nextTick(() => {
                         this.$refs['baseForm'].clearValidate()
@@ -323,9 +322,7 @@ export default {
             this.$refs[formName].validate(valid => {
                 if (valid) {
                     if (dialogType === 'add') {
-                        console.log(this.baseForm.organ_id)
                         this.baseForm.organ_id = this.baseForm.organ_id === undefined ? 0 : this.baseForm.organ_id
-                        console.log(this.baseForm.organ_id)
                         createUser(this.baseForm)
                             .then(res => {
                                 const { code, msg } = res

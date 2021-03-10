@@ -260,6 +260,16 @@ export default {
                 confirmPassword: '确认密码不能为空',
                 confirmPasswordLen: '长度在 6 到 10 个字符'
             }
+        },
+        smsTemp: {
+            tempName: '模板ID',
+            tempContent: '模板',
+            setSign: '签名信息',
+            sendTime: '发送时机',
+            tempDesc: '说明',
+            status: '模板状态',
+            addTemp: '新增短信模板',
+            time: '时间'
         }
     }
 }

@@ -261,6 +261,16 @@ export default {
                 confirmPassword: 'Please enter the confirm password',
                 confirmPasswordLen: 'Confirm password must be between 6 and 10 characters'
             }
+        },
+        smsTemp: {
+            tempName: 'Template ID',
+            tempContent: 'Template',
+            setSign: 'Signature',
+            sendTime: 'Send Time',
+            tempDesc: 'Description',
+            status: 'Status',
+            addTemp: 'Add Template',
+            time: 'Time'
         }
     }
 }
